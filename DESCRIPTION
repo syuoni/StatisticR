@@ -1,0 +1,11 @@
+Package: StatisticR
+Type: Package
+Title: Statistic Models with R
+Version: 0.1
+Date: 2016-10-13
+Author: syuoni
+Maintainer: syuoni <spiritas@163.com>
+Description: Statistic Models with R
+LazyData: yes
+License: GPL-3
+RoxygenNote: 5.0.1

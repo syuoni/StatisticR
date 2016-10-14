@@ -8,7 +8,7 @@
 \usage{
 mle.res.export(model.res, ...)
 
-mle.res.table.export(model.res.list, ...)
+mle.res.table.export(model.res.list, all.params = NULL, ...)
 }
 \arguments{
 \item{model.res}{ONE mle regression model result}

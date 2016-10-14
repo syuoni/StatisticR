@@ -21,6 +21,7 @@ clean4regression <- function(args, assign.labels=NULL, exempt.cond=FALSE, add.co
     na.indicator <- cbind(na.indicator, is.na(args[[lb]]))
   }
   drop.indicator <- apply(na.indicator, 1, any) & (!exempt.cond)
+  keep.nrow <- sum(!drop.indicator)
   
   model.args <- list()
   for(lb in names(args)){
@@ -28,17 +29,26 @@ clean4regression <- function(args, assign.labels=NULL, exempt.cond=FALSE, add.co
       model.args[[lb]] <- args[[lb]][!drop.indicator]
     }else{
       model.args[[lb]] <- args[[lb]][!drop.indicator, ]
-      
-      # for matrix: drop variables with unique value
-      # so if const variable is in matrix, it would be dropped, but may be added latter if add.const=TRUE
-      model.args[[lb]] <- model.args[[lb]][, apply(model.args[[lb]], 2, function(vec){
-        if(length(unique(vec)) > 1){
-          return(TRUE)
-        }else{
-          return(FALSE)
-        }
-      })]
-
+      if(dim(args[[lb]])[2] == 1){
+        # if the matrix has ONE column initially, we do NOT check whether this column is unique
+        # Actually if it is unique, the model must be wrong
+        model.args[[lb]] <- matrix(model.args[[lb]], ncol=1)
+        colnames(model.args[[lb]]) <- colnames(args[[lb]])
+      }else{
+        # for matrix: drop variables with unique value
+        # so if const variable is in matrix, it would be dropped, but may be added latter if add.const=TRUE
+        not.unique <- apply(model.args[[lb]], 2, function(vec){
+          if(length(unique(vec)) > 1){
+            return(TRUE)
+          }else{
+            return(FALSE)
+          }
+        })
+        # if just ONE column left, the matrix would become vector automatically
+        # so we should transform it back to matrix manually
+        model.args[[lb]] <- matrix(model.args[[lb]][, not.unique], nrow=keep.nrow)
+        colnames(model.args[[lb]]) <- colnames(args[[lb]])[not.unique]
+      }
       if(add.const){
         model.args[[lb]] <- cbind(model.args[[lb]], `_const`=1)
       }

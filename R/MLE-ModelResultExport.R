@@ -25,8 +25,16 @@ mle.res.export <- function(model.res, ...){
 #' @return a data frame
 #' @export
 #' @rdname mle_model_res_export
-mle.res.table.export <- function(model.res.list, ...){
-  res.table <- sapply(model.res.list, mle.res.export, ...)
+mle.res.table.export <- function(model.res.list, all.params=NULL, ...){
+  # if NO all.params specified, use all params from model.res.list
+  if(is.null(all.params)){
+    all.params <- NULL
+    for(model.res in model.res.list){
+      all.params <- c(all.params, row.names(model.res$table))
+    }
+    all.params <- unique(all.params)
+  }
+  res.table <- sapply(model.res.list, mle.res.export, all.params=all.params, ...)
   res.table <- data.frame(res.table)
   colnames(res.table) <- paste0('(', 1:length(res.table), ')')
   return(res.table)

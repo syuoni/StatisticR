@@ -13,19 +13,28 @@
 #' 
 #' @export 
 
-model.res.export <- function(model.res, all.params, parentheses.type='t.statistic', digits=3){
+model.res.export <- function(model.res, all.params=NULL, parentheses.type='t.statistic', digits=3){
+  # if NO all.params specified, use all params from model.res
+  if(is.null(all.params)){
+    all.params <- row.names(model.res$table)
+  }
   index <- NULL
   index[seq(1, by=2, along.with=all.params)] <- all.params
   index[seq(2, by=2, along.with=all.params)] <- paste0(all.params, '.par')
   
-  coef.str <- sapply(model.res$table[all.params, 'coef'], get.formatted)
-  sig.stars <- sapply(model.res$table[all.params, 'p.value'], get.sig.stars)
+  row.index <- 1:dim(model.res$table)[1]
+  names(row.index) <- row.names(model.res$table)
+  row.index <- row.index[all.params]
+  # row.index <- row.index[!is.na(row.index)]
+  
+  coef.str <- sapply(model.res$table[row.index, 'coef'], get.formatted)
+  sig.stars <- sapply(model.res$table[row.index, 'p.value'], get.sig.stars)
   coef.stars <- paste0(coef.str, sig.stars)
   
   if(parentheses.type=='t.statistic'){
-    in.parentheses <- sapply(model.res$table[all.params, 't.statistic'], get.formatted, parentheses=TRUE)
+    in.parentheses <- sapply(model.res$table[row.index, 't.statistic'], get.formatted, parentheses=TRUE)
   }else{
-    in.parentheses <- sapply(model.res$table[all.params, 'est.std.err'], get.formatted, parentheses=TRUE)
+    in.parentheses <- sapply(model.res$table[row.index, 'est.std.err'], get.formatted, parentheses=TRUE)
   }
   
   export.col <- NULL

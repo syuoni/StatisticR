@@ -5,8 +5,8 @@
 \alias{model_res_export}
 \title{model results export}
 \usage{
-model.res.export(model.res, all.params, parentheses.type = "t.statistic",
-  digits = 3)
+model.res.export(model.res, all.params = NULL,
+  parentheses.type = "t.statistic", digits = 3)
 }
 \arguments{
 \item{model.res}{ONE regression model result}

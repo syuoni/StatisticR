@@ -7,7 +7,7 @@
 #' @name mle_duration_models_with_selection
 #' @param t explained variable, vector, duration time
 #' @param X explanatory variable in matrix
-#' @param d explanatory variable, vector, whether the sample is failed (1=failure)s
+#' @param d explanatory variable, vector, whether the sample is failed (1=failure)
 #' @param z selection explained variable, binary
 #' @param W selection explanatory variable in matrix
 #' 

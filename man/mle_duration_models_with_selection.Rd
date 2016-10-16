@@ -19,7 +19,7 @@ mle.weibull.selection.estimate(t, X, z, W, d)
 
 \item{W}{selection explanatory variable in matrix}
 
-\item{d}{explanatory variable, vector, whether the sample is failed (1=failure)s}
+\item{d}{explanatory variable, vector, whether the sample is failed (1=failure)}
 }
 \value{
 a list with 4 elements, mle results

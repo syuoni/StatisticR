@@ -13,7 +13,11 @@ mle.res.table.export(model.res.list, all.params = NULL, ...)
 \arguments{
 \item{model.res}{ONE mle regression model result}
 
+\item{...}{parameters passed}
+
 \item{model.res.list}{mle regression models results}
+
+\item{all.params}{all potential parameters}
 }
 \value{
 a vector

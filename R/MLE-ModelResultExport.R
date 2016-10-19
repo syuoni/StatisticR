@@ -6,6 +6,7 @@ NULL
 
 #' @description export ONE mle model as a vector
 #' @param model.res ONE mle regression model result
+#' @param ... parameters passed
 #' 
 #' @return a vector
 #' @export
@@ -21,6 +22,7 @@ mle.res.export <- function(model.res, ...){
 
 #' @description export MULTIPLE mle models as a table (data frame)
 #' @param model.res.list mle regression models results
+#' @param all.params     all potential parameters 
 #' 
 #' @return a data frame
 #' @export

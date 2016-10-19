@@ -4,6 +4,9 @@
 \name{wardata}
 \alias{wardata}
 \title{war data}
+\description{
+war data
+}
 \author{
 syuoni
 }

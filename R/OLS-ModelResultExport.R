@@ -6,6 +6,7 @@ NULL
 
 #' @description export ONE ols model as a vector
 #' @param model.res ONE ols regression model result
+#' @param ... parameters passed
 #' 
 #' @return a vector
 #' @export

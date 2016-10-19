@@ -7,7 +7,7 @@
 #' @param model.res        ONE regression model result
 #' @param all.params       all potential parameters 
 #' @param parentheses.type 't-statistic' or 'standard error'
-#' @param digits
+#' @param digits           digits
 #' 
 #' @return a vector
 #' 

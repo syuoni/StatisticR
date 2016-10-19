@@ -4,4 +4,5 @@
 #' 
 #' @docType data
 #' @name regdata
+#' @description reg data
 NULL

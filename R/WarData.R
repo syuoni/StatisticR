@@ -4,4 +4,5 @@
 #' 
 #' @docType data
 #' @name wardata
+#' @description war data
 NULL

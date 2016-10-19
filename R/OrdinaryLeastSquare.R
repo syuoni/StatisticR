@@ -5,6 +5,7 @@
 #' @description Ordinary Least Square
 #' @param y explained variable
 #' @param X explanatory variable in matrix
+#' @param robust whether use robust convariance
 #' 
 #' @return a list with 7 elements
 #'   \item{convariance}{1 if robust, 0 if not}

@@ -9,6 +9,8 @@ ols.res.export(model.res, ...)
 }
 \arguments{
 \item{model.res}{ONE ols regression model result}
+
+\item{...}{parameters passed}
 }
 \value{
 a vector

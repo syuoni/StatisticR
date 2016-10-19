@@ -4,6 +4,9 @@
 \name{recid}
 \alias{recid}
 \title{recid data}
+\description{
+recid data
+}
 \author{
 syuoni
 }

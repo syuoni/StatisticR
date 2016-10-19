@@ -13,6 +13,9 @@ numeric.gr(func)
 \value{
 gradient function
 }
+\description{
+Numeric Gradient Function
+}
 \author{
 syuoni
 }

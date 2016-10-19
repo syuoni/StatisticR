@@ -14,13 +14,16 @@ ols.estimate(y, X, robust = FALSE)
 }
 \value{
 a list with 7 elements
-\item{convariance} whether robust
-\item{observations} 
-\item{R.square} R^2
-\item{adj.R.square} adjusted R^2
-\item{F.statistic} F-statistic
-\item{Prob.F} Prob(F)
-\item{table} regression result table
+  \item{convariance}{1 if robust, 0 if not}
+  \item{observations}{number of samples}
+  \item{R.square}{R^2}
+  \item{adj.R.square}{adjusted R^2}
+  \item{F.statistic}{F-statistic}
+  \item{Prob.F}{Prob(F)}
+  \item{table}{regression result table}
+}
+\description{
+Ordinary Least Square
 }
 \author{
 syuoni

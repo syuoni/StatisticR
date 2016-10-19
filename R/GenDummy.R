@@ -2,6 +2,7 @@
 #' @author syuoni
 #' 
 #' @name gen_dummy
+#' @description Generate Dummy
 #' @param vec    variable vector
 #' @param levels variable values, each generates a dummy
 #' @param head   dummy variable names

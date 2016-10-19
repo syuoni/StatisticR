@@ -4,18 +4,17 @@
 #' @name maximun_likelihood_estimation
 #' @description Base for MLE models
 #' @param lnlike  log-likelihood function
-#' @param args    fixed arguments for lnlike and gr, usually are data to fit. 
-#' \tiem{x} explanatory variable
-#' \item{y} explained variable
+#' @param args    A list. Fixed arguments for lnlike and gr, usually are data to fit. 
+#'   Usually include y as explained variable, X as explanatory variable
 #' @param params0 initial parameters to optimize
 #' @param gr      gradient function
 #' @param method  optimization method
-#' 
+#'   
 #' @return a list with 4 elements
-#' \item{convergence} 
-#' \item{observations} 
-#' \item{lnlikelihood} 
-#' \item{table} regression result table
+#'   \item{convergence}{1 if converge successfully, 0 if fail}
+#'   \item{observations}{number of samples}
+#'   \item{lnlikelihood}{log(likelihood)}
+#'   \item{table}{regression result table}
 #' 
 #' @export 
 

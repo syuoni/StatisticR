@@ -2,14 +2,15 @@
 #' @author syuoni
 #' 
 #' @name mle_binary_models
+#' @description Binary Models Estimation with MLE
 #' @param y explained variable, binary
 #' @param X explanatory variable in matrix
 #' 
-#' @return a list with 4 elements, mle results
-#' \item{convergence} 
-#' \item{observations} 
-#' \item{lnlikelihood} 
-#' \item{table} regression result table
+#' @return a list with 4 elements, mle result
+#'   \item{convergence}{1 if converge successfully, 0 if fail}
+#'   \item{observations}{number of samples}
+#'   \item{lnlikelihood}{log(likelihood)}
+#'   \item{table}{regression result table}
 NULL
 
 probit.lnlike <- function(beta, args){

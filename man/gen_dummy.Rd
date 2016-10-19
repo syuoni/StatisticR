@@ -17,6 +17,9 @@ gen.dummy(vec, levels = NULL, head = NULL)
 \value{
 dummy variable matrix
 }
+\description{
+Generate Dummy
+}
 \author{
 syuoni
 }

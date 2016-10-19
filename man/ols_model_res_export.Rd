@@ -14,8 +14,6 @@ ols.res.export(model.res, ...)
 a vector
 }
 \description{
-different type of models export method should be merged
-
 export ONE ols model as a vector
 }
 \author{

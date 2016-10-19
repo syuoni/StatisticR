@@ -2,15 +2,16 @@
 #' @author syuoni
 #' 
 #' @name mle_duration_models
+#' @description Duration Models Estimation with MLE
 #' @param t explained variable, vector, duration time
 #' @param X explanatory variable in matrix
 #' @param d explanatory variable, vector, whether the sample is failed (1=failure)
 # 
-#' @return a list with 4 elements, mle results
-#' \item{convergence} 
-#' \item{observations} 
-#' \item{lnlikelihood} 
-#' \item{table} regression result table
+#' @return a list with 4 elements, mle result
+#'   \item{convergence}{1 if converge successfully, 0 if fail}
+#'   \item{observations}{number of samples}
+#'   \item{lnlikelihood}{log(likelihood)}
+#'   \item{table}{regression result table}
 NULL
 
 exp.lnlike <- function(beta, args){

@@ -13,7 +13,7 @@ ols.estimate(y, X, robust = FALSE)
 \item{X}{explanatory variable in matrix}
 }
 \value{
-a list with 7 elements, mle results
+a list with 7 elements
 \item{convariance} whether robust
 \item{observations} 
 \item{R.square} R^2

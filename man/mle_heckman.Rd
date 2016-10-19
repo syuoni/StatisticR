@@ -17,11 +17,14 @@ mle.heckman.estimate(y, X, z, W)
 \item{W}{selection explanatory variable in matrix}
 }
 \value{
-a list with 4 elements, mle results
-\item{convergence} 
-\item{observations} 
-\item{lnlikelihood} 
-\item{table} regression result table
+a list with 4 elements, mle result
+  \item{convergence}{1 if converge successfully, 0 if fail}
+  \item{observations}{number of samples}
+  \item{lnlikelihood}{log(likelihood)}
+  \item{table}{regression result table}
+}
+\description{
+Heckman Models Estimation with MLE, Heckit
 }
 \author{
 syuoni

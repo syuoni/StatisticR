@@ -2,16 +2,17 @@
 #' @author syuoni
 #' 
 #' @name mle_heckman
+#' @description Heckman Models Estimation with MLE, Heckit
 #' @param y explained variable
 #' @param X explanatory variable in matrix
 #' @param z selection explained variable, binary
 #' @param W selection explanatory variable in matrix
 #' 
-#' @return a list with 4 elements, mle results
-#' \item{convergence} 
-#' \item{observations} 
-#' \item{lnlikelihood} 
-#' \item{table} regression result table
+#' @return a list with 4 elements, mle result
+#'   \item{convergence}{1 if converge successfully, 0 if fail}
+#'   \item{observations}{number of samples}
+#'   \item{lnlikelihood}{log(likelihood)}
+#'   \item{table}{regression result table}
 NULL
 
 heckman.lnlike <- function(theta, args){

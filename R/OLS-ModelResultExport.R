@@ -1,5 +1,4 @@
 #' @title model results export for OLS
-#' @description different type of models export method should be merged
 #' @author syuoni
 #' 
 #' @name ols_model_res_export

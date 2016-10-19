@@ -21,11 +21,14 @@ mle.gompertz.estimate(t, X, d)
 \item{d}{explanatory variable, vector, whether the sample is failed (1=failure)}
 }
 \value{
-a list with 4 elements, mle results
-\item{convergence} 
-\item{observations} 
-\item{lnlikelihood} 
-\item{table} regression result table
+a list with 4 elements, mle result
+  \item{convergence}{1 if converge successfully, 0 if fail}
+  \item{observations}{number of samples}
+  \item{lnlikelihood}{log(likelihood)}
+  \item{table}{regression result table}
+}
+\description{
+Duration Models Estimation with MLE
 }
 \author{
 syuoni

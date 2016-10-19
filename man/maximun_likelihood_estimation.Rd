@@ -10,9 +10,8 @@ mle.model(lnlike, args, params0, gr = NULL, method = "BFGS")
 \arguments{
 \item{lnlike}{log-likelihood function}
 
-\item{args}{fixed arguments for lnlike and gr, usually are data to fit. 
-\tiem{x} explanatory variable
-\item{y} explained variable}
+\item{args}{A list. Fixed arguments for lnlike and gr, usually are data to fit. 
+Usually include y as explained variable, X as explanatory variable}
 
 \item{params0}{initial parameters to optimize}
 
@@ -22,10 +21,10 @@ mle.model(lnlike, args, params0, gr = NULL, method = "BFGS")
 }
 \value{
 a list with 4 elements
-\item{convergence} 
-\item{observations} 
-\item{lnlikelihood} 
-\item{table} regression result table
+  \item{convergence}{1 if converge successfully, 0 if fail}
+  \item{observations}{number of samples}
+  \item{lnlikelihood}{log(likelihood)}
+  \item{table}{regression result table}
 }
 \description{
 Base for MLE models

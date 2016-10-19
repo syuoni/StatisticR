@@ -5,7 +5,7 @@
 #' @param y explained variable
 #' @param X explanatory variable in matrix
 #' 
-#' @return a list with 7 elements, mle results
+#' @return a list with 7 elements
 #' \item{convariance} whether robust
 #' \item{observations} 
 #' \item{R.square} R^2

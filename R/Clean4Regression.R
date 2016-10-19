@@ -44,7 +44,7 @@ clean4regression <- function(args, assign.labels=NULL, exempt.cond=FALSE, add.co
             return(FALSE)
           }
         })
-        # if just ONE column left, the matrix would become vector automatically
+        # if just ONE column left, the matrix would be reduced to vector automatically
         # so we should transform it back to matrix manually
         model.args[[lb]] <- matrix(model.args[[lb]][, not.unique], nrow=keep.nrow)
         colnames(model.args[[lb]]) <- colnames(args[[lb]])[not.unique]

@@ -5,7 +5,9 @@ Version: 0.1
 Date: 2016-10-13
 Author: syuoni
 Maintainer: syuoni <spiritas@163.com>
-Description: Statistic Models with R
+Description: An implementation of statistic models with R. It contains basically Econometrics models.
 LazyData: yes
+Imports:
+    stats
 License: GPL-3
 RoxygenNote: 5.0.1

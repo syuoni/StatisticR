@@ -4,4 +4,5 @@
 #' 
 #' @docType data
 #' @name recid
+#' @description recid data
 NULL

@@ -2,6 +2,7 @@
 #' @author syuoni
 #' 
 #' @name numeric_gradient
+#' @description Numeric Gradient Function
 #' @param func function to calculate numeric gradient function
 #' 
 #' @return gradient function

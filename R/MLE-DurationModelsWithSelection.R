@@ -1,7 +1,7 @@
 #' @title Duration Models With Selection Estimation with MLE
 #' @author syuoni
 #' 
-#' @references Boehmke F J, Morey D S, Shannon M. Selection Bias and Continuous‐Time Duration Models: 
+#' @references Boehmke F J, Morey D S, Shannon M. Selection Bias and Continuous Time Duration Models: 
 #'   Consequences and a Proposed Solution[J]. American Journal of Political Science, 2006, 50(1): 192-207.
 #' 
 #' @name mle_duration_models_with_selection
@@ -92,7 +92,7 @@ weibull.selection.lnlike <- function(theta, args){
   Wg <- as.vector(W %*% gamma)
   lambda1 <- exp(-Wg)
   lambda2 <- exp(Xb)
-
+  
   lnlike.z1d0 <- -lambda1+log(1+alpha*(1-2*exp(-(lambda2*t)**p))*(1-exp(-lambda1)))+lnp+log(lambda2)+(p-1)*log(lambda2*t)-(lambda2*t)**p
   lnlike.z1d1 <- -lambda1-(lambda2*t)**p+log(1+alpha*(1-exp(-(lambda2*t)**p))*(1-exp(-lambda1)))
   # Stata/dursel/wblsel: Calculate lnlike.z1d1 with following formula

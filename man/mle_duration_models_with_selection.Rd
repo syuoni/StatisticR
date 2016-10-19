@@ -35,7 +35,7 @@ Duration Models With Selection Estimation with MLE
 syuoni
 }
 \references{
-Boehmke F J, Morey D S, Shannon M. Selection Bias and Continuous‐Time Duration Models: 
+Boehmke F J, Morey D S, Shannon M. Selection Bias and Continuous Time Duration Models: 
   Consequences and a Proposed Solution[J]. American Journal of Political Science, 2006, 50(1): 192-207.
 }
 

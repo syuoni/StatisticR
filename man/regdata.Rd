@@ -4,6 +4,9 @@
 \name{regdata}
 \alias{regdata}
 \title{reg data}
+\description{
+reg data
+}
 \author{
 syuoni
 }

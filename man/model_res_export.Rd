@@ -15,7 +15,7 @@ model.res.export(model.res, all.params = NULL,
 
 \item{parentheses.type}{'t-statistic' or 'standard error'}
 
-\item{digits}{}
+\item{digits}{digits}
 }
 \value{
 a vector

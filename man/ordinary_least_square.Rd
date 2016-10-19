@@ -11,6 +11,8 @@ ols.estimate(y, X, robust = FALSE)
 \item{y}{explained variable}
 
 \item{X}{explanatory variable in matrix}
+
+\item{robust}{whether use robust convariance}
 }
 \value{
 a list with 7 elements

@@ -1,7 +1,7 @@
-# setwd('D:/Documents/R/Statistics and Econometrics/StatisticR')
-# 
-# library(devtools)
-# load_all()
+setwd('D:/Documents/R/Statistics and Econometrics/StatisticR')
+
+library(devtools)
+load_all()
 
 # test for numeric.gr
 # foo <- function(theta, c){
@@ -23,9 +23,9 @@
 
 # test for linear regression
 
-# model.res <- ols.estimate(regdata$y, regdata[c('x1', 'x2', 'x3', 'x4')], robust = F)
-# model.export <- ols.res.export(model.res)
-# print(cbind(model.export))
+model.res <- ols.estimate(regdata$y, regdata[c('x1', 'x2', 'x3', 'x4')], robust = F)
+model.export <- ols.res.export(model.res)
+print(cbind(model.export))
 
 # all.params <- c('x1', 'x2', 'x3', 'x4', 'x5', '_con', 'sigma')
 # 

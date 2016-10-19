@@ -4,7 +4,7 @@
 \alias{mle.res.export}
 \alias{mle.res.table.export}
 \alias{mle_model_res_export}
-\title{model results export}
+\title{model results export for MLE}
 \usage{
 mle.res.export(model.res, ...)
 

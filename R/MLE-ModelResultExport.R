@@ -1,4 +1,4 @@
-#' @title model results export
+#' @title model results export for MLE
 #' @author syuoni
 #' 
 #' @name mle_model_res_export

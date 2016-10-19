@@ -22,14 +22,19 @@ load_all()
 
 
 # test for linear regression
-all.params <- c('x1', 'x2', 'x3', 'x4', 'x5', '_con', 'sigma')
 
-model.res1 <- mle.linear.estimate(regdata$y, regdata[c('x1', 'x2', 'x4')])
-model.res2 <- mle.linear.estimate(regdata$y, regdata[c('x1', 'x3', 'x4')])
-model.res3 <- mle.linear.estimate(regdata$y, regdata[c('x1', 'x2', 'x3', 'x4')])
+model.res <- ols.estimate(regdata$y, regdata[c('x1', 'x2', 'x3', 'x4')], robust = F)
+model.export <- ols.res.export(model.res)
+print(cbind(model.export))
 
-res.table <- mle.res.table.export(list(model.res1, model.res2, model.res3), all.params=NULL)
-print(res.table)
+# all.params <- c('x1', 'x2', 'x3', 'x4', 'x5', '_con', 'sigma')
+# 
+# model.res1 <- mle.linear.estimate(regdata$y, regdata[c('x1', 'x2', 'x4')])
+# model.res2 <- mle.linear.estimate(regdata$y, regdata[c('x1', 'x3', 'x4')])
+# model.res3 <- mle.linear.estimate(regdata$y, regdata[c('x1', 'x2', 'x3', 'x4')])
+# 
+# res.table <- mle.res.table.export(list(model.res1, model.res2, model.res3), all.params=NULL)
+# print(res.table)
 # 
 # 
 # test for binary models

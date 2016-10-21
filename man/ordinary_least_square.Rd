@@ -3,7 +3,7 @@
 \name{ordinary_least_square}
 \alias{ols.estimate}
 \alias{ordinary_least_square}
-\title{Ordinary Least Square}
+\title{Ordinary Least Square(OLS) Model}
 \usage{
 ols.estimate(y, X, robust = FALSE)
 }
@@ -15,7 +15,8 @@ ols.estimate(y, X, robust = FALSE)
 \item{robust}{whether use robust convariance}
 }
 \value{
-a list with 7 elements
+a list with 8 elements
+  \item{method}{'ols'}
   \item{convariance}{1 if robust, 0 if not}
   \item{observations}{number of samples}
   \item{R.square}{R^2}
@@ -25,9 +26,6 @@ a list with 7 elements
   \item{table}{regression result table}
 }
 \description{
-Ordinary Least Square
-}
-\author{
-syuoni
+Ordinary Least Square(OLS) Model
 }
 

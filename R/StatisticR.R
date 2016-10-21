@@ -1,4 +1,4 @@
-#' statistic with R
+#' An implementation of statistic models with R. It contains basically Econometrics models.
 #' 
 #' @docType package
 #' @name statistic_r

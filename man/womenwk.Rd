@@ -3,11 +3,8 @@
 \docType{data}
 \name{womenwk}
 \alias{womenwk}
-\title{womenwk data}
+\title{Example data for heckman models}
 \description{
-womenwk data
-}
-\author{
-syuoni
+Example data for heckman models
 }
 

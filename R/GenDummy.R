@@ -1,8 +1,6 @@
-#' @title Generate Dummy
-#' @author syuoni
+#' Generate dummy variables from ONE variable
 #' 
 #' @name gen_dummy
-#' @description Generate Dummy
 #' @param vec    variable vector
 #' @param levels variable values, each generates a dummy
 #' @param head   dummy variable names
@@ -10,7 +8,6 @@
 #' @return dummy variable matrix
 #' 
 #' @export 
-
 gen.dummy <- function(vec, levels=NULL, head=NULL){
   if(is.null(levels)){
     levels <- unique(vec)
@@ -22,6 +19,3 @@ gen.dummy <- function(vec, levels=NULL, head=NULL){
   colnames(dummies) <- head
   return(dummies)
 }
-
-
-

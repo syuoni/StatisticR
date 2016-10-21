@@ -1,8 +1,5 @@
-#' @title womenwk data
-#'  
-#' @author syuoni
-#' 
+#' Example data for heckman models
+#'
 #' @docType data
 #' @name womenwk
-#' @description womenwk data
 NULL

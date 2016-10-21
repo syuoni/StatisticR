@@ -3,11 +3,8 @@
 \docType{data}
 \name{wardata}
 \alias{wardata}
-\title{war data}
+\title{Example data for duration models with selection}
 \description{
-war data
-}
-\author{
-syuoni
+Example data for duration models with selection
 }
 

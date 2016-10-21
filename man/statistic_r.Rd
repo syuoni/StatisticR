@@ -4,8 +4,8 @@
 \name{statistic_r}
 \alias{statistic_r}
 \alias{statistic_r-package}
-\title{statistic with R}
+\title{An implementation of statistic models with R. It contains basically Econometrics models.}
 \description{
-statistic with R
+An implementation of statistic models with R. It contains basically Econometrics models.
 }
 

@@ -1,13 +1,12 @@
-#' @title Duration Models Estimation with MLE
-#' @author syuoni
+#' Duration Models Estimation with MLE
 #' 
 #' @name mle_duration_models
-#' @description Duration Models Estimation with MLE
 #' @param t explained variable, vector, duration time
 #' @param X explanatory variable in matrix
 #' @param d explanatory variable, vector, whether the sample is failed (1=failure)
 # 
-#' @return a list with 4 elements, mle result
+#' @return a list with 5 elements, mle result
+#'   \item{method}{'mle'}
 #'   \item{convergence}{1 if converge successfully, 0 if fail}
 #'   \item{observations}{number of samples}
 #'   \item{lnlikelihood}{log(likelihood)}

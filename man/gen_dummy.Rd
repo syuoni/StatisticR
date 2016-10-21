@@ -3,7 +3,7 @@
 \name{gen_dummy}
 \alias{gen.dummy}
 \alias{gen_dummy}
-\title{Generate Dummy}
+\title{Generate dummy variables from ONE variable}
 \usage{
 gen.dummy(vec, levels = NULL, head = NULL)
 }
@@ -18,9 +18,6 @@ gen.dummy(vec, levels = NULL, head = NULL)
 dummy variable matrix
 }
 \description{
-Generate Dummy
-}
-\author{
-syuoni
+Generate dummy variables from ONE variable
 }
 

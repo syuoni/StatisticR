@@ -1,18 +1,17 @@
-#' @title Duration Models With Selection Estimation with MLE
-#' @author syuoni
+#' Duration Models With Selection Estimation with MLE
 #' 
 #' @references Boehmke F J, Morey D S, Shannon M. Selection Bias and Continuous Time Duration Models: 
 #'   Consequences and a Proposed Solution[J]. American Journal of Political Science, 2006, 50(1): 192-207.
 #' 
 #' @name mle_duration_models_with_selection
-#' @description Duration Models With Selection Estimation with MLE
 #' @param t explained variable, vector, duration time
 #' @param X explanatory variable in matrix
 #' @param d explanatory variable, vector, whether the sample is failed (1=failure)
 #' @param z selection explained variable, binary
 #' @param W selection explanatory variable in matrix
 #' 
-#' @return a list with 4 elements, mle result
+#' @return a list with 5 elements, mle result
+#'   \item{method}{'mle'}
 #'   \item{convergence}{1 if converge successfully, 0 if fail}
 #'   \item{observations}{number of samples}
 #'   \item{lnlikelihood}{log(likelihood)}

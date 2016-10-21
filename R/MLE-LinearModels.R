@@ -1,17 +1,15 @@
-#' @title Linear Models Estimation with MLE
-#' @author syuoni
+#' Linear Models Estimation with MLE
 #' 
 #' @name mle_linear_models
-#' @description Linear Models Estimation with MLE
 #' @param y explained variable
 #' @param X explanatory variable in matrix
 #' 
-#' @return a list with 4 elements, mle result
+#' @return a list with 5 elements, mle result
+#'   \item{method}{'mle'}
 #'   \item{convergence}{1 if converge successfully, 0 if fail}
 #'   \item{observations}{number of samples}
 #'   \item{lnlikelihood}{log(likelihood)}
-#'   \item{table}{regression result table}
-#' 
+#'   \item{table}{regression result table} 
 #' @export 
 
 mle.linear.estimate <- function(y, X){

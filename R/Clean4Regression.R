@@ -1,17 +1,15 @@
-#' @title Clean for Regression
-#' @author syuoni
+#' Clean data frame for fegression, including dropping NA observations 
+#'   and adding constant variable, make it prepared for regression models
 #' 
 #' @name clean4regression
-#' @description drop NA observations and add constant variable, prepare for regression model
-#' @param args          arguments for regression model
+#' @param args          arguments for regression model, before cleaning
 #' @param assign.labels NA samples in args with specific labels would be dropped 
 #' @param exempt.cond   vector, exempt condition, sample would not be dropped if it is TRUE
 #' @param add.const     whether add const variable for matrix
 #' 
-#' @return a list, args for regression
+#' @return a list, arguments for regression model, after cleaning
 #' 
 #' @export 
-
 clean4regression <- function(args, assign.labels=NULL, exempt.cond=FALSE, add.const=TRUE){
   if(is.null(assign.labels)){
     assign.labels <- names(args)

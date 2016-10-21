@@ -1,15 +1,12 @@
-#' @title model results export
-#' @author syuoni
-#' 
-#' @description Export ONE regression model result as a vector
+#' Export ONE regression model result as a vector.
 #' 
 #' @name model_res_export
 #' @param model.res        ONE regression model result
 #' @param all.params       all potential parameters 
-#' @param parentheses.type 't-statistic' or 'standard error'
+#' @param parentheses.type 't-statistic' or 'standard error' in parentheses
 #' @param digits           digits
 #' 
-#' @return a vector
+#' @return a vector of regression model result
 #' 
 #' @export 
 
@@ -40,7 +37,15 @@ model.res.export <- function(model.res, all.params=NULL, parentheses.type='t.sta
   export.col <- NULL
   export.col[seq(1, by=2, along.with=all.params)] <- coef.stars
   export.col[seq(2, by=2, along.with=all.params)] <- in.parentheses
-  names(export.col) <- index
+  
+  # Additional Infomation
+  if(model.res$method=='ols'){
+    export.col <- c(export.col, model.res$observations, '', get.formatted(model.res$adj.R.square),
+                    get.formatted(model.res$F.statistic))
+  }else if(model.res$method=='mle'){
+    export.col <- c(export.col, model.res$observations, get.formatted(model.res$lnlikelihood), '', '')
+  }
+  names(export.col) <- c(index, 'observations', 'lnlike', 'R-square', 'F-statistic')
   return(export.col)
 }
 

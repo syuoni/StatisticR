@@ -22,7 +22,8 @@ mle.weibull.selection.estimate(t, X, z, W, d)
 \item{d}{explanatory variable, vector, whether the sample is failed (1=failure)}
 }
 \value{
-a list with 4 elements, mle result
+a list with 5 elements, mle result
+  \item{method}{'mle'}
   \item{convergence}{1 if converge successfully, 0 if fail}
   \item{observations}{number of samples}
   \item{lnlikelihood}{log(likelihood)}
@@ -30,9 +31,6 @@ a list with 4 elements, mle result
 }
 \description{
 Duration Models With Selection Estimation with MLE
-}
-\author{
-syuoni
 }
 \references{
 Boehmke F J, Morey D S, Shannon M. Selection Bias and Continuous Time Duration Models: 

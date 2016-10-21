@@ -2,13 +2,14 @@
 % Please edit documentation in R/Clean4Regression.R
 \name{clean4regression}
 \alias{clean4regression}
-\title{Clean for Regression}
+\title{Clean data frame for fegression, including dropping NA observations 
+  and adding constant variable, make it prepared for regression models}
 \usage{
 clean4regression(args, assign.labels = NULL, exempt.cond = FALSE,
   add.const = TRUE)
 }
 \arguments{
-\item{args}{arguments for regression model}
+\item{args}{arguments for regression model, before cleaning}
 
 \item{assign.labels}{NA samples in args with specific labels would be dropped}
 
@@ -17,12 +18,10 @@ clean4regression(args, assign.labels = NULL, exempt.cond = FALSE,
 \item{add.const}{whether add const variable for matrix}
 }
 \value{
-a list, args for regression
+a list, arguments for regression model, after cleaning
 }
 \description{
-drop NA observations and add constant variable, prepare for regression model
-}
-\author{
-syuoni
+Clean data frame for fegression, including dropping NA observations 
+  and adding constant variable, make it prepared for regression models
 }
 

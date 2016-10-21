@@ -1,14 +1,10 @@
-#' @title Numeric Gradient Function
-#' @author syuoni
+#' Generage a numeric gradient function
 #' 
-#' @name numeric_gradient
-#' @description Numeric Gradient Function
+#' @name numeric_gr
 #' @param func function to calculate numeric gradient function
 #' 
 #' @return gradient function
-#' 
 #' @export 
-
 numeric.gr <- function(func){
   dx <- 1e-3
   func.gr <- function(theta, ...){

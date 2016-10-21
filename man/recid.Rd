@@ -3,11 +3,8 @@
 \docType{data}
 \name{recid}
 \alias{recid}
-\title{recid data}
+\title{Example data for duration models}
 \description{
-recid data
-}
-\author{
-syuoni
+Example data for duration models
 }
 

@@ -1,8 +1,5 @@
-#' @title reg data
-#'  
-#' @author syuoni
+#' Example data for linear and binary models
 #' 
 #' @docType data
 #' @name regdata
-#' @description reg data
 NULL

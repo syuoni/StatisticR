@@ -3,11 +3,8 @@
 \docType{data}
 \name{regdata}
 \alias{regdata}
-\title{reg data}
+\title{Example data for linear and binary models}
 \description{
-reg data
-}
-\author{
-syuoni
+Example data for linear and binary models
 }
 

@@ -3,7 +3,7 @@
 \name{maximun_likelihood_estimation}
 \alias{maximun_likelihood_estimation}
 \alias{mle.model}
-\title{Maximun Likelihood Estimation Model}
+\title{Maximun Likelihood Estimation(MLE) Model, the base for MLE models}
 \usage{
 mle.model(lnlike, args, params0, gr = NULL, method = "BFGS")
 }
@@ -20,16 +20,14 @@ Usually include y as explained variable, X as explanatory variable}
 \item{method}{optimization method}
 }
 \value{
-a list with 4 elements
+a list with 5 elements
+  \item{method}{'mle'}
   \item{convergence}{1 if converge successfully, 0 if fail}
   \item{observations}{number of samples}
   \item{lnlikelihood}{log(likelihood)}
   \item{table}{regression result table}
 }
 \description{
-Base for MLE models
-}
-\author{
-syuoni
+Maximun Likelihood Estimation(MLE) Model, the base for MLE models
 }
 

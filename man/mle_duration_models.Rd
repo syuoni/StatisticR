@@ -21,7 +21,8 @@ mle.gompertz.estimate(t, X, d)
 \item{d}{explanatory variable, vector, whether the sample is failed (1=failure)}
 }
 \value{
-a list with 4 elements, mle result
+a list with 5 elements, mle result
+  \item{method}{'mle'}
   \item{convergence}{1 if converge successfully, 0 if fail}
   \item{observations}{number of samples}
   \item{lnlikelihood}{log(likelihood)}
@@ -29,8 +30,5 @@ a list with 4 elements, mle result
 }
 \description{
 Duration Models Estimation with MLE
-}
-\author{
-syuoni
 }
 

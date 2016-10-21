@@ -1,8 +1,6 @@
-#' @title Maximun Likelihood Estimation Model
-#' @author syuoni
+#' Maximun Likelihood Estimation(MLE) Model, the base for MLE models
 #' 
 #' @name maximun_likelihood_estimation
-#' @description Base for MLE models
 #' @param lnlike  log-likelihood function
 #' @param args    A list. Fixed arguments for lnlike and gr, usually are data to fit. 
 #'   Usually include y as explained variable, X as explanatory variable
@@ -10,7 +8,8 @@
 #' @param gr      gradient function
 #' @param method  optimization method
 #'   
-#' @return a list with 4 elements
+#' @return a list with 5 elements
+#'   \item{method}{'mle'}
 #'   \item{convergence}{1 if converge successfully, 0 if fail}
 #'   \item{observations}{number of samples}
 #'   \item{lnlikelihood}{log(likelihood)}
@@ -55,7 +54,8 @@ mle.model <- function(lnlike, args, params0, gr=NULL, method='BFGS'){
   coef.table <- data.frame(coef, est.std.err, t.statistic, p.value, 
                            conf.int.lower, conf.int.upper,
                            row.names=names(params0))
-  model.res <- list(convergence =convergence,
+  model.res <- list(method      ='mle',
+                    convergence =convergence,
                     observations=n,
                     lnlikelihood=lnlike,
                     table       =coef.table)

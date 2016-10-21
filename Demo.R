@@ -23,18 +23,17 @@ load_all()
 
 # test for linear regression
 
-model.res <- ols.estimate(regdata$y, regdata[c('x1', 'x2', 'x3', 'x4')], robust = F)
-model.export <- ols.res.export(model.res)
+ols.model.res <- ols.estimate(regdata$y, regdata[c('x1', 'x2', 'x3', 'x4')], robust = T)
+model.export <- model.res.export(ols.model.res)
 print(cbind(model.export))
 
-# all.params <- c('x1', 'x2', 'x3', 'x4', 'x5', '_con', 'sigma')
-# 
-# model.res1 <- mle.linear.estimate(regdata$y, regdata[c('x1', 'x2', 'x4')])
-# model.res2 <- mle.linear.estimate(regdata$y, regdata[c('x1', 'x3', 'x4')])
-# model.res3 <- mle.linear.estimate(regdata$y, regdata[c('x1', 'x2', 'x3', 'x4')])
-# 
-# res.table <- mle.res.table.export(list(model.res1, model.res2, model.res3), all.params=NULL)
-# print(res.table)
+mle.model.res <- mle.linear.estimate(regdata$y, regdata[c('x1', 'x2', 'x3', 'x4')])
+model.export <- model.res.export(mle.model.res)
+print(cbind(model.export))
+
+res.table <- model.res.table.export(list(ols.model.res, mle.model.res))
+print(res.table)
+
 # 
 # 
 # test for binary models
@@ -74,15 +73,15 @@ print(cbind(model.export))
 # 
 # 
 # # test for heckman
-# y <- womenwk$lw
-# X <- womenwk[c('education', 'age', 'children')]
-# z <- ifelse(is.na(y), 0, 1)
-# W <- womenwk[c('age', 'married', 'children', 'education')]
-# 
-# # in this model, optimization result would be better if setting the initial params=[1e-4, 1e-4, ...]
-# # lnlike: 1052.857 -> 1044.652
-# heckman.res <- mle.heckman.estimate(y,X,z,W)
-# print(heckman.res)
+y <- womenwk$lw
+X <- womenwk[c('education', 'age', 'children')]
+z <- ifelse(is.na(y), 0, 1)
+W <- womenwk[c('age', 'married', 'children', 'education')]
+
+# in this model, optimization result would be better if setting the initial params=[1e-4, 1e-4, ...]
+# lnlike: 1052.857 -> 1044.652
+heckman.res <- mle.heckman.estimate(y,X,z,W)
+print(heckman.res)
 # 
 # 
 # # test for duration models with selection

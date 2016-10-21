@@ -1,13 +1,12 @@
-#' @title Ordinary Least Square
-#' @author syuoni
+#' Ordinary Least Square(OLS) Model
 #' 
 #' @name ordinary_least_square
-#' @description Ordinary Least Square
 #' @param y explained variable
 #' @param X explanatory variable in matrix
 #' @param robust whether use robust convariance
 #' 
-#' @return a list with 7 elements
+#' @return a list with 8 elements
+#'   \item{method}{'ols'}
 #'   \item{convariance}{1 if robust, 0 if not}
 #'   \item{observations}{number of samples}
 #'   \item{R.square}{R^2}
@@ -16,8 +15,7 @@
 #'   \item{Prob.F}{Prob(F)}
 #'   \item{table}{regression result table}
 #' 
-#' @export 
-
+#' @export
 ols.estimate <- function(y, X, robust=FALSE){
   args <- list(y=y, X=as.matrix(X))
   args <- clean4regression(args)
@@ -108,7 +106,8 @@ ols.estimate <- function(y, X, robust=FALSE){
                            est.std.err, t.statistic, p.value, 
                            conf.int.lower, conf.int.upper,
                            row.names=colnames(X))
-  model.res <- list(convariance =convariance,
+  model.res <- list(method      ='ols',
+                    convariance =convariance,
                     observations=n,
                     R.square    =R.sqr,
                     adj.R.square=adj.R.sqr,

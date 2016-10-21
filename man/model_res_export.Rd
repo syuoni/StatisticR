@@ -3,7 +3,7 @@
 \name{model_res_export}
 \alias{model.res.export}
 \alias{model_res_export}
-\title{model results export}
+\title{Export ONE regression model result as a vector.}
 \usage{
 model.res.export(model.res, all.params = NULL,
   parentheses.type = "t.statistic", digits = 3)
@@ -13,17 +13,14 @@ model.res.export(model.res, all.params = NULL,
 
 \item{all.params}{all potential parameters}
 
-\item{parentheses.type}{'t-statistic' or 'standard error'}
+\item{parentheses.type}{'t-statistic' or 'standard error' in parentheses}
 
 \item{digits}{digits}
 }
 \value{
-a vector
+a vector of regression model result
 }
 \description{
-Export ONE regression model result as a vector
-}
-\author{
-syuoni
+Export ONE regression model result as a vector.
 }
 

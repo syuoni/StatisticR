@@ -1,8 +1,5 @@
-#' @title recid data
-#'  
-#' @author syuoni
+#' Example data for duration models
 #' 
 #' @docType data
 #' @name recid
-#' @description recid data
 NULL

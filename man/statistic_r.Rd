@@ -6,6 +6,7 @@
 \alias{statistic_r-package}
 \title{An implementation of statistic models with R.}
 \description{
-This package contains basically Econometrics models.
+An implementation of statistic models with R. 
+  This package contains basically Econometrics models.
 }
 

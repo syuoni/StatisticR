@@ -3,7 +3,7 @@
 \name{maximun_likelihood_estimation}
 \alias{maximun_likelihood_estimation}
 \alias{mle.model}
-\title{Maximun Likelihood Estimation(MLE) Model, the base for MLE models}
+\title{Maximun Likelihood Estimation(MLE) Model}
 \usage{
 mle.model(lnlike, args, params0, gr = NULL, method = "BFGS")
 }

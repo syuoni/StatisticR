@@ -2,8 +2,7 @@
 % Please edit documentation in R/Clean4Regression.R
 \name{clean4regression}
 \alias{clean4regression}
-\title{Clean data frame for fegression, including dropping NA observations 
-  and adding constant variable, make it prepared for regression models}
+\title{Clean data frame for fegression}
 \usage{
 clean4regression(args, assign.labels = NULL, exempt.cond = FALSE,
   add.const = TRUE)

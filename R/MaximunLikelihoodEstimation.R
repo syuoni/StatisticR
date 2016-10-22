@@ -1,3 +1,5 @@
+#' Maximun Likelihood Estimation(MLE) Model
+#' 
 #' Maximun Likelihood Estimation(MLE) Model, the base for MLE models
 #' 
 #' @name maximun_likelihood_estimation

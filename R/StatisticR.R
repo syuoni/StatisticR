@@ -1,4 +1,7 @@
-#' An implementation of statistic models with R. It contains basically Econometrics models.
+#' An implementation of statistic models with R. 
+#' 
+#' An implementation of statistic models with R. 
+#'   This package contains basically Econometrics models.
 #' 
 #' @docType package
 #' @name statistic_r

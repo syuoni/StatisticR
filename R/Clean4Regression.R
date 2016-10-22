@@ -1,3 +1,5 @@
+#' Clean data frame for fegression
+#' 
 #' Clean data frame for fegression, including dropping NA observations 
 #'   and adding constant variable, make it prepared for regression models
 #' 

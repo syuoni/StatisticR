@@ -60,7 +60,8 @@ ols.estimate <- function(y, X, robust=FALSE){
     conf.int.upper <- b.hat + t95 * est.std.err
     
     # F-test for all beta=0 (except for the constant)
-    R <- diag(K)[1:K-1, ]
+    # Avoid being reduced to vector
+    R <- matrix(diag(K)[1:K-1, ], nrow=K-1)
     Rb <- R %*% b.hat
     RXtXiRti <- solve(R %*% XtXi %*% t(R))
     F.statistic <- t(Rb) %*% RXtXiRti %*% Rb / ((K-1)*s.sqr)
@@ -89,7 +90,8 @@ ols.estimate <- function(y, X, robust=FALSE){
     
     # Wald-test and F-test are equivalent in large sample
     # F-test for all beta=0 (except for the constant)
-    R <- diag(K)[1:K-1, ]
+    # Avoid being reduced to vector
+    R <- matrix(diag(K)[1:K-1, ], nrow=K-1)
     Rb <- R %*% b.hat
     
     RXtXiRt <- solve(R %*% XtXi %*% t(R))

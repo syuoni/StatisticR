@@ -3,6 +3,13 @@ setwd('D:/Documents/R/Statistics and Econometrics/StatisticR')
 library(devtools)
 load_all()
 
+# ----- test for dummy generation
+x <- c(1, 2, 3, 2, 4, 1)
+print(gen.dummy(x, prefix='x'))
+print(gen.dummy(x, prefix='x', last.rm=TRUE))
+x <- c(1, 2, 1, 2, 1)
+print(gen.dummy(x, prefix='x', last.rm=TRUE))
+
 # ----- test for within estimate
 n <- 500
 df <- data.frame(x=rnorm(n),

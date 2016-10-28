@@ -5,7 +5,8 @@
 \alias{gen_dummy}
 \title{Generate dummy variables from ONE variable}
 \usage{
-gen.dummy(vec, levels = NULL, prefix = NULL, head = NULL, bool = FALSE)
+gen.dummy(vec, levels = NULL, prefix = NULL, head = NULL,
+  last.rm = FALSE, bool = FALSE)
 }
 \arguments{
 \item{vec}{variable vector}
@@ -15,6 +16,8 @@ gen.dummy(vec, levels = NULL, prefix = NULL, head = NULL, bool = FALSE)
 \item{prefix}{prefix for dummy variables}
 
 \item{head}{dummy variable names}
+
+\item{last.rm}{remove the last dummy if TRUE}
 
 \item{bool}{return bool dummy variables if TRUE}
 }

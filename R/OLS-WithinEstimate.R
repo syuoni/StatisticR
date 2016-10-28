@@ -18,6 +18,12 @@
 #' 
 #' @export
 ols.within.estimate <- function(y, X, group.indic, robust=FALSE){
+  args <- list(y=y, X=as.matrix(X), group.indic=group.indic)
+  args <- clean4regression(args, add.const=FALSE)
+  y <- args$y
+  X <- args$X
+  group.indic <- args$group.indic
+  
   for(lv in unique(group.indic)){
     y[group.indic==lv] <- y[group.indic==lv] - mean(y[group.indic==lv])
     # Propagation in R: two arrays are all raveled, 

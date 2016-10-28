@@ -14,13 +14,16 @@ print(gen.dummy(x, prefix='x', first.rm=TRUE))
 n <- 500
 df <- data.frame(x=rnorm(n),
                  indic=round(runif(n, 1, 4)))
-y <- apply(df, 1, mean)
+y <- apply(df, 1, sum)
+
+df$x[5] <- NA
+
 print(ols.estimate(y, df['x']))
 
 dummy <- gen.dummy(df$indic, prefix='indic')
 X <- cbind(df['x'], dummy[, 1:(dim(dummy)[2]-1)])
 print(ols.estimate(y, X))
-print(within.estimate(y, df['x'], df$indic))
+print(ols.within.estimate(y, df['x'], df$indic))
 
 
 # ----- test for numeric.gr

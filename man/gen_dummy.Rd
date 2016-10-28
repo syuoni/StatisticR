@@ -5,14 +5,18 @@
 \alias{gen_dummy}
 \title{Generate dummy variables from ONE variable}
 \usage{
-gen.dummy(vec, levels = NULL, head = NULL)
+gen.dummy(vec, levels = NULL, prefix = NULL, head = NULL, bool = FALSE)
 }
 \arguments{
 \item{vec}{variable vector}
 
 \item{levels}{variable values, each generates a dummy}
 
+\item{prefix}{prefix for dummy variables}
+
 \item{head}{dummy variable names}
+
+\item{bool}{return bool dummy variables if TRUE}
 }
 \value{
 dummy variable matrix

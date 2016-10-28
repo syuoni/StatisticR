@@ -3,6 +3,19 @@ setwd('D:/Documents/R/Statistics and Econometrics/StatisticR')
 library(devtools)
 load_all()
 
+# ----- test for within estimate
+n <- 500
+df <- data.frame(x=rnorm(n),
+                 indic=round(runif(n, 1, 4)))
+y <- apply(df, 1, mean)
+print(ols.estimate(y, df['x']))
+
+dummy <- gen.dummy(df$indic, prefix='indic')
+X <- cbind(df['x'], dummy[, 1:(dim(dummy)[2]-1)])
+print(ols.estimate(y, X))
+print(within.estimate(y, df['x'], df$indic))
+
+
 # ----- test for numeric.gr
 foo <- function(theta, c){
   return(theta[1]*c+theta[2]**2)

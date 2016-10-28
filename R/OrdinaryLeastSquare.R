@@ -4,6 +4,7 @@
 #' @param y explained variable
 #' @param X explanatory variable in matrix
 #' @param robust whether use robust convariance
+#' @param add.const whether add constant variable
 #' 
 #' @return a list with 8 elements
 #'   \item{method}{'ols'}
@@ -16,9 +17,9 @@
 #'   \item{table}{regression result table}
 #' 
 #' @export
-ols.estimate <- function(y, X, robust=FALSE){
+ols.estimate <- function(y, X, robust=FALSE, add.const=TRUE){
   args <- list(y=y, X=as.matrix(X))
-  args <- clean4regression(args)
+  args <- clean4regression(args, add.const=add.const)
   y <- args$y
   X <- args$X
   n <- dim(X)[1]

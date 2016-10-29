@@ -8,7 +8,7 @@
 #' 
 #' @return a list with 8 elements
 #'   \item{method}{'ols'}
-#'   \item{convariance}{1 if robust, 0 if not}
+#'   \item{robust}{use robust covariance if TRUE}
 #'   \item{observations}{number of samples}
 #'   \item{R.square}{R^2}
 #'   \item{adj.R.square}{adjusted R^2}
@@ -27,29 +27,22 @@ ols.estimate <- function(y, X, robust=FALSE, add.const=TRUE){
   
   XtX <- t(X) %*% X
   XtXi <- solve(XtX)
-  # b.hat = B %*% y
-  B <- XtXi %*% t(X)
-  # projection matrix
-  P <- X %*% B
-  # annihilator matrix
-  M <- diag(n) - P
   
-  b.hat <- B %*% y
-  y.hat <- P %*% y
-  e.hat <- M %*% y
+  b.hat <- XtXi %*% t(X) %*% y
+  y.hat <- X %*% b.hat
+  e.hat <- y - y.hat
   s.sqr <- sum(e.hat**2) / (n-K)
   s <- s.sqr ** 0.5
   
   # R-square
   y.mean <- mean(y)
-  SST <- sum((y-y.mean)**2)
+  SST <- sum((y    -y.mean)**2)
   SSE <- sum((y.hat-y.mean)**2)
-  SSR <- sum(e.hat**2)
+  SSR <- sum( e.hat        **2)
   R.sqr <- SSE / SST
   adj.R.sqr <- 1 - (SSR/(n-K)) / (SST/(n-1))
   
   if(robust==FALSE){
-    convariance <- 'non-robust'
     # stanard errors and t-test
     est.cov <- s.sqr * XtXi
     est.std.err <- diag(est.cov) ** 0.5
@@ -71,10 +64,10 @@ ols.estimate <- function(y, X, robust=FALSE, add.const=TRUE){
     F.statistic <- F.statistic[1]
     F.p.value <- 1 - pf(F.statistic, K-1, n-K)
   }else{
-    convariance <- 'robust'
     # sqrt(n)*(b-beta) ~ N(0, Avarb)
     # b-beta = (X'X)-1 * X' * epsilon
-    Avarb.hat <- n * B %*% diag(as.vector(e.hat)**2) %*% t(B)
+    S.hat <- t(X) %*% (as.vector(e.hat)**2 * X) / n
+    Avarb.hat <- (n*XtXi) %*% S.hat %*% t(n*XtXi)
     # freedom adjusted as n-K to be consistent with stata
     Avarb.hat <- Avarb.hat * n / (n-K)
     est.cov <- Avarb.hat / n
@@ -110,7 +103,7 @@ ols.estimate <- function(y, X, robust=FALSE, add.const=TRUE){
                            conf.int.lower, conf.int.upper,
                            row.names=colnames(X))
   model.res <- list(method      ='ols',
-                    convariance =convariance,
+                    robust      =robust,
                     observations=n,
                     R.square    =R.sqr,
                     adj.R.square=adj.R.sqr,

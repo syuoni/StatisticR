@@ -3,12 +3,19 @@ setwd('D:/Documents/R/Statistics and Econometrics/StatisticR')
 library(devtools)
 load_all()
 
+# test for large sample
+n <- 50000
+df <- data.frame(x=rnorm(n),
+                 y=rnorm(n))
+ols.estimate(df$y, df['x'], T)
+
 # ----- test for dummy generation
 x <- c(1, 2, 3, 2, 4, 1)
 print(gen.dummy(x, prefix='x'))
 print(gen.dummy(x, prefix='x', first.rm=TRUE))
 x <- c(1, 2, 1, 2, 1)
 print(gen.dummy(x, prefix='x', first.rm=TRUE))
+
 
 # ----- test for within estimate
 n <- 500

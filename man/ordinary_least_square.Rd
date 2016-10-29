@@ -19,7 +19,7 @@ ols.estimate(y, X, robust = FALSE, add.const = TRUE)
 \value{
 a list with 8 elements
   \item{method}{'ols'}
-  \item{convariance}{1 if robust, 0 if not}
+  \item{robust}{use robust covariance if TRUE}
   \item{observations}{number of samples}
   \item{R.square}{R^2}
   \item{adj.R.square}{adjusted R^2}

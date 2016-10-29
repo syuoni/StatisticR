@@ -17,9 +17,9 @@ ols.within.estimate(y, X, group.indic, robust = FALSE)
 \item{robust}{whether use robust convariance}
 }
 \value{
-a list with 8 elements
+a list with 8 elements, ols result
   \item{method}{'ols'}
-  \item{convariance}{1 if robust, 0 if not}
+  \item{robust}{use robust covariance if TRUE}
   \item{observations}{number of samples}
   \item{R.square}{R^2}
   \item{adj.R.square}{adjusted R^2}

@@ -24,14 +24,14 @@ model.res.export <- function(model.res, all.params=NULL, parentheses.type='t.sta
   row.index <- row.index[all.params]
   # row.index <- row.index[!is.na(row.index)]
   
-  coef.str <- sapply(model.res$table[row.index, 'coef'], get.formatted)
+  coef.str <- sapply(model.res$table[row.index, 'coef'], get.formatted, digits=digits)
   sig.stars <- sapply(model.res$table[row.index, 'p.value'], get.sig.stars)
   coef.stars <- paste0(coef.str, sig.stars)
   
   if(parentheses.type=='t.statistic'){
-    in.parentheses <- sapply(model.res$table[row.index, 't.statistic'], get.formatted, parentheses=TRUE)
+    in.parentheses <- sapply(model.res$table[row.index, 't.statistic'], get.formatted, digits=digits, parentheses=TRUE)
   }else{
-    in.parentheses <- sapply(model.res$table[row.index, 'est.std.err'], get.formatted, parentheses=TRUE)
+    in.parentheses <- sapply(model.res$table[row.index, 'est.std.err'], get.formatted, digits=digits, parentheses=TRUE)
   }
   
   export.col <- NULL
@@ -40,12 +40,12 @@ model.res.export <- function(model.res, all.params=NULL, parentheses.type='t.sta
   
   # Additional Infomation
   if(model.res$method=='ols'){
-    export.col <- c(export.col, model.res$observations, '', get.formatted(model.res$adj.R.square),
-                    get.formatted(model.res$F.statistic))
+    export.col <- c(export.col, model.res$observations, '', get.formatted(model.res$adj.R.square, digits=digits),
+                    get.formatted(model.res$F.statistic, digits=digits))
   }else if(model.res$method=='mle'){
-    export.col <- c(export.col, model.res$observations, get.formatted(model.res$lnlikelihood), '', '')
+    export.col <- c(export.col, model.res$observations, get.formatted(model.res$lnlikelihood, digits=digits), '', '')
   }
-  names(export.col) <- c(index, 'observations', 'lnlike', 'R-square', 'F-statistic')
+  names(export.col) <- c(index, 'observations', 'lnlike', 'adj.R-square', 'F-statistic')
   return(export.col)
 }
 

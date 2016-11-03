@@ -57,7 +57,7 @@ mle.model.res <- mle.linear.estimate(regdata$y, regdata[c('x1', 'x2', 'x3', 'x4'
 
 res.table <- model.res.table.export(list(ols.model.res))
 print(res.table)
-res.table <- model.res.table.export(list(ols.model.res, mle.model.res))
+res.table <- model.res.table.export(list(ols.model.res, mle.model.res), digits=4)
 print(res.table)
 
 

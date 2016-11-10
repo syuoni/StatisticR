@@ -3,7 +3,7 @@
 \name{mle_heckman}
 \alias{mle.heckman.estimate}
 \alias{mle_heckman}
-\title{Heckman Models Estimation with MLE, Heckit}
+\title{Heckman Models Estimation with MLE}
 \usage{
 mle.heckman.estimate(y, X, z, W)
 }
@@ -25,6 +25,6 @@ a list with 5 elements, mle result
   \item{table}{regression result table}
 }
 \description{
-Heckman Models Estimation with MLE, Heckit
+Heckman Models Estimation with MLE
 }
 

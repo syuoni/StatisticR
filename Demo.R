@@ -108,6 +108,8 @@ W <- womenwk[c('age', 'married', 'children', 'education')]
 # lnlike: 1052.857 -> 1044.652
 heckman.res <- mle.heckman.estimate(y,X,z,W)
 print(heckman.res)
+heckit.res <- twostep.heckman.estimate(y,X,z,W)
+print(heckit.res)
 
 
 # ----- test for duration models with selection

@@ -1,4 +1,4 @@
-#' Heckman Models Estimation with MLE, Heckit
+#' Heckman Models Estimation with MLE
 #' 
 #' @name mle_heckman
 #' @param y explained variable

@@ -6,10 +6,14 @@
 #' @param robust whether use robust convariance
 #' @param add.const whether add constant variable
 #' 
-#' @return a list with 8 elements
+#' @return a list with 12 elements
 #'   \item{method}{'ols'}
 #'   \item{robust}{use robust covariance if TRUE}
 #'   \item{observations}{number of samples}
+#'   \item{RMSE}{root mean square error}
+#'   \item{SSE}{square sum explained}
+#'   \item{SSR}{square sum residual}
+#'   \item{SST}{sqaure sum total}
 #'   \item{R.square}{R^2}
 #'   \item{adj.R.square}{adjusted R^2}
 #'   \item{F.statistic}{F-statistic}
@@ -105,6 +109,10 @@ ols.estimate <- function(y, X, robust=FALSE, add.const=TRUE){
   model.res <- list(method      ='ols',
                     robust      =robust,
                     observations=n,
+                    RMSE        =s,
+                    SSE         =SSE,
+                    SSR         =SSR,
+                    SST         =SST,
                     R.square    =R.sqr,
                     adj.R.square=adj.R.sqr,
                     F.statistic =F.statistic,
